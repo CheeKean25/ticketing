@@ -1,0 +1,59 @@
+apiVersion: skaffold/v4beta7
+kind: Config
+build:
+  artifacts:
+    - image: kenchinufinity0225/ticketing-auth
+      context: auth
+      sync:
+        manual:
+          - src: src/**/*.ts
+            dest: .
+      docker:
+        dockerfile: Dockerfile
+    - image: kenchinufinity0225/ticketing-client
+      context: client
+      sync:
+        manual:
+          - src: "**/*.ts"
+            dest: .
+      docker:
+        dockerfile: Dockerfile
+    - image: kenchinufinity0225/ticketing-tickets
+      context: tickets
+      sync:
+        manual:
+          - src: src/**/*.ts
+            dest: .
+      docker:
+        dockerfile: Dockerfile
+    - image: kenchinufinity0225/ticketing-orders
+      context: orders
+      sync:
+        manual:
+          - src: src/**/*.ts
+            dest: .
+      docker:
+        dockerfile: Dockerfile
+    - image: kenchinufinity0225/ticketing-expiration
+      context: expiration
+      sync:
+        manual:
+          - src: src/**/*.ts
+            dest: .
+      docker:
+        dockerfile: Dockerfile
+    - image: kenchinufinity0225/ticketing-payments
+      context: payments
+      sync:
+        manual:
+          - src: src/**/*.ts
+            dest: .
+      docker:
+        dockerfile: Dockerfile
+  local:
+    push: false
+manifests:
+  rawYaml:
+    - ./infra/k8s/*
+deploy:
+  kubectl: {}
