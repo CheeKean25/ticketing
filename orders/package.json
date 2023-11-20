@@ -6,7 +6,8 @@
   "scripts": {
     "start": "ts-node-dev --poll src/index.ts",
     "test": "jest --watchAll --no-cache",
-    "postinstall": "npx typesync"
+    "postinstall": "npx typesync",
+    "test:ci": "jest"
   },
   "jest": {
     "preset": "ts-jest",
