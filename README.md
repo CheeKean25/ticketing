@@ -501,10 +501,26 @@ Local Machine
 2. Commit code to git branch
 3. Push branch to github
 
-GitHub
+## GitHub
 
 1. GitHub receives updated branch
 2. You manually create a pull request to merge branch into master
 3. GitHub automatically runs tests for project
 4. After tests pass, you merge PR into master branch
 5. Because master branch has changed, github builds and deploys
+
+## GitHub Action
+
+The events belows will trigger github action.
+
+1. Code pushed
+2. Pull request created
+3. Pull request closed
+4. Repository is forked
+
+## Set Up GitHub Action
+
+1. Click "Actions" on repository page
+2. Find & select "set up simple workflow"
+3. Check the file: .github/workflows > tests.yml
+4. Why need npm run test:ci => run test suite exactly one time and then automatically exit
