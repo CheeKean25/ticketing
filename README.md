@@ -524,3 +524,11 @@ The events belows will trigger github action.
 2. Find & select "set up simple workflow"
 3. Check the file: .github/workflows > tests.yml
 4. Why need npm run test:ci => run test suite exactly one time and then automatically exit
+
+## Deployment
+
+1. Select a cluster provider (digital ocean, aws, azure, gcp) and buy a domain name
+2. Config the k8s cluster, setup the dev and prod and set up ingress-src separately for different environment
+3. Update the domain name in skaffold.yaml
+4. Setup the secret properly in github
+5. Config the GitHub auto deployment after link the provider
