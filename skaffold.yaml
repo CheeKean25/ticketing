@@ -1,5 +1,10 @@
 apiVersion: skaffold/v4beta7
 kind: Config
+deploy:
+  kubectl:
+    manifests:
+      - ./infra/k8s/*
+      - ./infra/k8s-dev/*
 build:
   artifacts:
     - image: kenchinufinity0225/ticketing-auth
